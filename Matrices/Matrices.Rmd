@@ -1,0 +1,46 @@
+---
+title: "5 - Matrices"
+author: "Jose R. Guignan"
+date: "2023-08-10"
+output:
+  pdf_document: default
+  html_document: default
+---
+
+```{r}
+#crea una matrix con numeros del 1 al 10, 5 por fila, llenados por filas
+A <- matrix(1:10, nrow = 5, byrow = TRUE)
+A
+
+#crea una matrix con numeros del 1 al 10, 5 por fila, llenados por columnas
+A <- matrix(1:10, nrow = 5)
+A
+
+#elemento de la matriz
+A[1,2]
+
+a <- c(2,1)
+b <- c(3,5)
+
+#crea una matriz a travez de vectores
+C <- rbind(a,b) #por filas
+C
+
+d <- cbind(a,b) #por columna
+d
+
+#diemnsion de la matriz
+dim(A)
+#dimension de las filas de la matriz
+nrow(A)
+#dimension de las columnas de la matriz
+ncol(A)
+
+B<-matrix(21:30, nrow = 5)
+#operaciones
+A+B #suma de matrices
+A*B #multiplcacion elemento a elemento
+A %*% C #mulpliplicacion de matrices
+```
+
+

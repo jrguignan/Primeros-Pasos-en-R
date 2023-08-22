@@ -1,0 +1,33 @@
+---
+title: "6 - Funciones"
+author: "Jose R. Guignan"
+date: "2023-08-10"
+output:
+  pdf_document: default
+  html_document: default
+---
+
+```{r}
+#Funcion sin pasar argumentos
+ladrar <- function(){
+ print("wau")
+}
+
+ladrar()
+
+#Funcion con paso de argumentos
+saludar <- function(nombre){
+  paste("Hola",nombre)
+}
+
+saludar(nombre="José")
+
+#Funcion con salida
+operacion <- function(a,b){
+  c <- a+b/2
+  return(c)
+}
+
+operacion(2,3)
+```
+

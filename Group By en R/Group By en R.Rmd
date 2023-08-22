@@ -1,0 +1,42 @@
+---
+title: "Group By en R"
+author: "Jose R. Guignan"
+date: "2023-08-14"
+output: html_document
+---
+
+```{r}
+library(magrittr)
+library(dplyr)#tiene conflicto con otros paquetes
+library(dplyr) #produce un conflicto porque varios paquetes tienen los mismos nombre para sus funciones, por eso se debe especificar para esas funciones, de cual paquete es la funcion a usar
+library(ggplot2)
+
+data("diamonds", package = "ggplot2")
+
+head(diamonds)
+
+#cuenta por la clasificacion que tiene cut
+#metdo 1
+diamonds %>% group_by(cut) %>% summarize(conteo = n())
+#metodo 2
+diamonds %>% group_by(cut) %>% tally()
+
+#cuenta por la clasificacion de color de manera ascendente
+diamonds %>% group_by(color) %>% tally() %>% arrange(desc(n))
+
+#Ordema de forma decreciente el promedio de la clasificacion de cut
+diamonds %>% group_by(cut) %>% summarize(promedio=mean(price)) %>% arrange(desc(promedio))
+
+#valor relatico de la clasificacion de cut
+diamonds %>% group_by(cut) %>% summarise(n=n()/nrow(.))
+
+#suma el valor relatico de la clasificacion de cut
+diamonds %>% group_by(cut) %>% summarise(n=n()/nrow(.)) %>% select(n) %>% sum()
+
+#cuenta por las clasificacion de cut y clarity
+diamonds %>% group_by(cut,clarity) %>% tally()
+
+#saca el valor minimo y maximo de la clasificacion de cut
+diamonds %>% group_by(cut) %>% summarize(Min_precio=min(price), Max_precio=max(price))
+```
+
