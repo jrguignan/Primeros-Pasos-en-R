@@ -1,0 +1,28 @@
+#lista con un vector, un numero, un caracter y parte de un dataframe
+lista1 <- list(c(1,2,3),2,"3", mtcars[c(1,5), 1:4])
+lista1
+
+#da nombres a los elementos dentro de las lista
+names(lista1) <- c("lista1","lista2","lista3","lista4")
+lista1
+
+#Crear lista con nombres
+lista2 <- list(lista0=c(1:3), lista1=c(1,2))
+lista2
+
+#da los nombre de la lista
+names(lista2)
+
+#crear lista vacia
+lista.v = vector(mode = "list", length=4)
+lista.v
+
+#asigna un vector a un elemento de la lista
+lista.v[[2]] <- c(1,3,4)
+lista.v
+
+#mostrar dentro de la lista
+lista1[[4]][2,]
+
+#muesta de la lista4 que esta dentro de la lista1, las columnas de "cyl" iguales a 6
+lista1$lista4[lista1$lista4$"cyl"==6,]

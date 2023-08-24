@@ -1,13 +1,3 @@
----
-title: "3 - Dataframe"
-author: "Jose R. Guignan"
-date: "2023-08-10"
-output:
-  pdf_document: default
-  html_document: default
----
-
-```{r}
 x=c(1:10)
 y=c(10:1)
 w=c('etq','etq1','etq2','etq3','etq4','etq5','etq6','etq7','etq8','etq9')
@@ -52,5 +42,3 @@ mtcars[mtcars$cyl==8, 1:3]
 dim(mtcars)
 nrow(mtcars)
 ncol(mtcars)
-```
-

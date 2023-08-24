@@ -1,0 +1,28 @@
+#switch solo
+x<-"a"
+#Compara el valor de x con lo de la lista dentro del switch
+#si el valor es verdadero corre lo que esta a la derecha del
+#igual y si no todos son falsos, se imprime la ultima linea
+prueba <- switch(
+  x,
+  "a" = print("es igual a a"),
+  "b" = print("es igual a b"),
+  "c" = print("es igual a c"),
+  "el valor no esta guardado"
+)
+
+
+#switch en funcion
+
+#recibe la operacion a realizar y dos variables numericas
+op.variadas <- function(X,A,B){
+  
+  #compara X para realizar una operacion determinada
+  switch(X,
+         "Suma" =  paste("la sumas es:", A+B),
+         "Resta" = paste("la resta es:", A-B),
+         "Multiplicacion" = paste("la multiplicacion es :, A*B"),
+         "No esta definido"
+  )}
+
+op.variadas('Suma',2,3)

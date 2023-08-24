@@ -1,13 +1,3 @@
----
-title: "Group By en R"
-author: "Jose R. Guignan"
-date: "2023-08-14"
-output:
-  pdf_document: default
-  html_document: default
----
-
-```{r}
 library(magrittr)
 library(dplyr)#tiene conflicto con otros paquetes
 library(dplyr) #produce un conflicto porque varios paquetes tienen los mismos nombre para sus funciones, por eso se debe especificar para esas funciones, de cual paquete es la funcion a usar
@@ -40,5 +30,3 @@ diamonds %>% group_by(cut,clarity) %>% tally()
 
 #saca el valor minimo y maximo de la clasificacion de cut
 diamonds %>% group_by(cut) %>% summarize(Min_precio=min(price), Max_precio=max(price))
-```
-
